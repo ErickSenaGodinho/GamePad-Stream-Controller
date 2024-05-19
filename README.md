@@ -17,7 +17,8 @@ O script utiliza as bibliotecas `pynput`, `pyjoystick` e `plyer` para mapear os 
  pip install pynput pyjoystick plyer
 ```
 3. Execute o arquivo `main.py` para iniciar o controlador.
-4. Personalize os perfis de acordo com suas necessidades no arquivo `profiles_shortcuts.py`.
+4. Configure o seu gamepad em `gamepad.py`
+5. Personalize os perfis de acordo com suas necessidades no arquivo `profiles_shortcuts.py`.
 
 ## Dependências
 - `pynput`: Para captura e execuçao de eventos do teclado.
