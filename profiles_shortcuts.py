@@ -1,4 +1,4 @@
-from gamedeskprofile import Profile, gamepad
+from gamepad_profile import Profile, gamepad
 from shortcuts import Key, set_scene, press_key
 
 Profile.profiles = [Profile("Gameplay com Gamepad"), Profile("Livezinha de boa")]
