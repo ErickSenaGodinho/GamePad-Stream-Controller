@@ -1,19 +1,17 @@
-import time
-from pynput.keyboard import Key, KeyCode, Controller
+from gamepad_profile import gamepad
+from commands import set_scene, press_key
 
-keyboard = Controller()
-
-def set_scene(scene):
-    press_keys([Key.ctrl, Key.shift, str(scene)])
-
-def press_key(key: str | Key | KeyCode):
-    keyboard.press(key)
-    time.sleep(0.05)
-    keyboard.release(key)
-
-def press_keys(keys: list):
-    for key in keys:
-        keyboard.press(key)
-        time.sleep(0.05)
-    for key in keys:
-        keyboard.release(key)
+data = {
+    "Profile 1": [
+        ([gamepad.Key.START, gamepad.Key.RB, gamepad.Key.Y], [(set_scene, 1)]),
+        ([gamepad.Key.START, gamepad.Key.RB, gamepad.Key.X], [(set_scene, 2)]),
+        ([gamepad.Key.START, gamepad.Key.RB, gamepad.Key.B], [(set_scene, 3)]),
+        ([gamepad.Key.START, gamepad.Key.RB, gamepad.Key.LB], [(press_key, 'esc')])
+    ],
+    "Profile 2": [
+        ([gamepad.Key.Y], [(set_scene, 1)]),
+        ([gamepad.Key.X], [(set_scene, 2)]),
+        ([gamepad.Key.B], [(set_scene, 3)]),
+        ([gamepad.Key.A], [(set_scene, 4)])
+    ]
+}

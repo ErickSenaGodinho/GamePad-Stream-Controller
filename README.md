@@ -4,7 +4,7 @@
 Este projeto foi feito apenas por diversão e permite que você use seu gamepad como um controlador de stream, controlador de mídias, entre outros, mapeando comandos do teclado para serem executados através do gamepad.
 
 ## Como Funciona
-O script utiliza as bibliotecas `pynput`, `pyjoystick` e `plyer` para mapear os inputs do gamepad para comandos de teclado. Por exemplo, você pode pausar, reproduzir ou alterar o volume diretamente do seu gamepad.
+O script utiliza as bibliotecas `pyautogui` `pynput`, `pyjoystick` e `plyer` para mapear os inputs do gamepad para comandos de teclado. Por exemplo, você pode pausar, reproduzir ou alterar o volume diretamente do seu gamepad.
 
 ## Funcionalidades
 - **Mapeamento Personalizável**: Configure seu gamepad para simular qualquer comando de teclado.
@@ -14,14 +14,15 @@ O script utiliza as bibliotecas `pynput`, `pyjoystick` e `plyer` para mapear os 
 1. Clone o repositório para sua máquina local.
 2. Instale as dependências necessárias com
 ```bash
- pip install pynput pyjoystick plyer
+ pip install pyautogui pynput pyjoystick plyer
 ```
 3. Execute o arquivo `main.py` para iniciar o controlador.
 4. Configure o seu gamepad em `gamepad.py`
 5. Personalize os perfis de acordo com suas necessidades no arquivo `profiles_shortcuts.py`.
 
 ## Dependências
-- `pynput`: Para captura e execuçao de eventos do teclado.
+- `pyautogui` : Para a execução de comandos.
+- `pynput`: Para captura eventos do teclado.
 - `pyjoystick`: Para integração com o gamepad.
 - `plyer`: Para notificações do sistema.
 
