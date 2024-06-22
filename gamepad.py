@@ -1,7 +1,7 @@
 from enum import IntEnum
 from pyjoystick import Joystick
 
-class GamePadKey(IntEnum):
+class GamePadMapping(IntEnum):
     """Gamepad button mapping."""
     A = 0
     B = 1
@@ -16,4 +16,4 @@ class GamePadKey(IntEnum):
 
 class CustomGamePad(Joystick):
     """Custom gamepad that uses our own button mapping."""
-    Key = GamePadKey
+    Button = GamePadMapping

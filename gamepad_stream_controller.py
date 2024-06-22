@@ -1,19 +1,21 @@
 import os
 from pynput.keyboard import Key, Listener
 from pyjoystick.sdl2 import Joystick, Key as GamePadKey, run_event_loop as re_loop
-from gamepad_profile import Profile
-from shortcuts import data
+from gamepad_profile import Profile, ProfileManager
+from shortcuts import profile_shortcuts, general_shortcuts
 from notification import show_notification
 
 CLOSE_PROGRAM_KEY = Key.alt_gr
 pressed_buttons = {}
 
-def load_profiles():
-    for profile_name in data.keys():
+def load_profile_list():
+    for profile_name in profile_shortcuts.keys():
         profile = Profile(profile_name)
-        for shortcut, actions in data[profile_name]:
+        for shortcut, actions in profile_shortcuts[profile_name]:
             profile.add_shortcut(shortcut, actions)
-        Profile.profiles.append(profile)
+        for shortcut, actions in general_shortcuts:
+            profile.add_shortcut(shortcut, actions)
+        ProfileManager.add_profile(profile)
 
 def run():
     # Start Keyboard Listener Thread
@@ -45,5 +47,4 @@ def key_received(key: GamePadKey):
     if key.keytype != GamePadKey.BUTTON:
         return
     pressed_buttons[key.number] = not pressed_buttons.get(key.number, False)
-    current_profile = Profile.current_profile
-    Profile.profiles[current_profile].try_shortcut(pressed_buttons)
+    ProfileManager.get_current_profile().try_shortcut(pressed_buttons)
