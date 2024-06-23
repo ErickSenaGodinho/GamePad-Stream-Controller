@@ -17,7 +17,7 @@ O script utiliza as bibliotecas `pyautogui` `pynput`, `pyjoystick` e `plyer` par
  pip install pyautogui pynput pyjoystick plyer
 ```
 3. Configure o seu gamepad em `gamepad.py`
-4. Personalize os perfis de acordo com suas necessidades no arquivo `shortcuts.py`.
+4. Personalize os atalhos e perfis de acordo com suas necessidades no arquivo `shortcuts.py`.
 5. Execute o arquivo `main.py` para iniciar o controlador.
 
 ## Dependências
@@ -30,6 +30,6 @@ O script utiliza as bibliotecas `pyautogui` `pynput`, `pyjoystick` e `plyer` par
 Contribuições são bem-vindas! Se você tem melhorias ou correções, sinta-se à vontade para fazer um fork do projeto e abrir um pull request, ou criar uma issue.
 
 ## Ideas de features:
-- Suporte à multiplos gamepads.
+- Suporte à outros gamepads (PS4, PS5).
 - Integração com aplicativos como OBS, Stream Labs, Spotify, Youtube Music, entre outros.
 - Abrir jogos/aplicativos.
